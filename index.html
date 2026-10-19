@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>У каждого времени свои герои</title>
+    
+    <!-- ИКОНКА ДЛЯ ВКЛАДКИ БРАУЗЕРА -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- Подключение строгого и красивого шрифта Montserrat из Google Fonts -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ВЫЕЗЖАЮЩЕЕ МЕНЮ (МЕХАНИКА НА ЧИСТОМ CSS) -->
+    <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+    
+    <!-- Кнопка «Три полоски» (Гамбургер) -->
+    <label for="menu-toggle" class="hamburger-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
+    <!-- Само выезжающее боковое меню -->
+    <nav class="side-menu">
+        <ul class="menu-links">
+            <li><a href="about.html">О проекте</a></li>
+            <li><a href="index.html" class="active">Главная</a></li>
+            <li><a href="arhiv.html">Архив</a></li>
+            <li><a href="authors.html">Авторы проекта </a></li>
+            <li><a href="contacts.html">Контактная информация</a></li>
+        </ul>
+    </nav>
+
+    <!-- Основной контейнер страницы -->
+    <main class="main">
+        
+        <!-- БЛОК ДЛЯ ДВУХ ЭМБЛЕМ И НАДПИСИ В ЛЕВОМ ВЕРХНЕМ УГЛУ -->
+        <header class="top-emblems">
+            <div class="emblems-wrapper">
+                <img src="emblem1.png" alt="Эмблема 1" class="logo">
+                <img src="emblem2.png" alt="Эмблема 2" class="logo">
+            </div>
+            <div class="emblems-text">
+                <span>Патриотический проект</span>
+                <small>г. Речица</small>
+            </div>
+        </header>
+
+        <!-- Основной контент (заголовок, описание, кнопка) -->
+        <div class="main-content">
+            <h1>У каждого времени свои герои</h1>
+            
+            <p class="bottom-text">
+                Интерактивный сайт разработан с целью сохранения исторической памяти о жителях города Речицы и Речицкого района, исполнявших интернациональный долг в Афганистане, а также для увековечивания их подвига, популяризации исторических знаний и формирования у молодежи чувства патриотизма и гордости за своих земляков
+            </p>
+            
+            <a href="arhiv.html" class="animated-btn">Перейти в архив</a>
+        </div>
+
+
+        <!-- Тонкая полоска в самом низу страницы -->
+        <footer class="bottom-line">
+            <p>© 2026 Сайт разработан при поддержке клуба "БАГОР" ГУО"Средняя школа №7 г.Речицы"</p>
+        </footer>
+    </main>
+</body>
+</html>

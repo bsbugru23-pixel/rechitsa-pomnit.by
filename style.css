@@ -1,0 +1,944 @@
+/* ==========================================================================
+   1. ОБЩИЕ СТИЛИ ДЛЯ ВСЕГО САЙТА (БАЗОВЫЕ НАСТРОЙКИ)
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    color: #222222;
+    background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url("background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+}
+
+/* Общий контейнер для страниц "Авторы" и "О проекте" */
+.authors-container {
+    max-width: 900px; 
+    width: 100%;
+    margin: 80px auto 40px auto; 
+    padding: 0 20px;
+}
+
+/* Общие заголовки страниц */
+.authors-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #ffffff;
+    margin-bottom: 40px;
+    text-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+}
+
+/* ==========================================================================
+   2. МЕХАНИКА ВЫЕЗЖАЮЩЕГО МЕНЮ (ГАМБУРГЕР)
+   ========================================================================== */
+.menu-checkbox {
+    display: none;
+}
+
+.hamburger-btn {
+    position: fixed;
+    top: 25px;
+    left: 25px;
+    width: 30px;
+    height: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+.hamburger-btn span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    transition: all 0.3s ease-in-out;
+}
+
+.side-menu {
+    position: fixed;
+    top: 0;
+    left: -280px; 
+    width: 280px;
+    height: 100vh;
+    background-color: rgba(15, 15, 15, 0.6); 
+    backdrop-filter: blur(15px);              
+    -webkit-backdrop-filter: blur(15px);   
+    padding: 90px 30px 30px 30px;
+    box-shadow: 5px 0 25px rgba(0,0,0,0.4);
+    border-right: 1px solid rgba(255, 255, 255, 0.08); 
+    z-index: 999; 
+    transition: left 0.4s cubic-bezier(0.1, 1, 0.1, 1); 
+}
+
+/* Анимация гамбургера при активации */
+.menu-checkbox:checked ~ .side-menu {
+    left: 0;
+}
+
+.menu-checkbox:checked ~ .hamburger-btn span:nth-child(1) {
+    transform: translateY(9.5px) rotate(45deg);
+}
+
+.menu-checkbox:checked ~ .hamburger-btn span:nth-child(2) {
+    opacity: 0; 
+    transform: scale(0);
+}
+
+.menu-checkbox:checked ~ .hamburger-btn span:nth-child(3) {
+    transform: translateY(-9.5px) rotate(-45deg);
+}
+
+/* Элементы навигации */
+.menu-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.menu-links li {
+    margin-bottom: 25px;
+}
+
+.menu-links a {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.75);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.menu-links a:hover {
+    color: #ff4b2b; 
+    padding-left: 8px; 
+}
+
+.menu-links a.active {
+    color: #ffffff;
+    border-left: 3px solid #ff416c;
+    padding-left: 10px;
+}
+
+/* ==========================================================================
+   3. ГЛАВНАЯ СТРАНИЦА (INDEX)
+   ========================================================================== */
+.main {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding: 20px 20px 15px 20px; 
+}
+
+.top-emblems {
+    align-self: flex-start; 
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: rgba(0, 0, 0, 0.35); 
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    padding: 10px 18px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    margin-left: 60px; 
+    margin-top: 5px;   
+    margin-bottom: 20px;
+}
+
+.emblems-wrapper {
+    display: flex;
+    gap: 20px;
+}
+
+.top-emblems .logo {
+    width: 100px !important;       
+    height: 100px !important;      
+    object-fit: contain !important;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+
+.emblems-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.emblems-text span {
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+
+.emblems-text small {
+    font-size: 11px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 2px;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 850px;
+    width: 100%;
+    margin-top: auto; 
+    margin-bottom: auto; 
+}
+
+.main h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: 52px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
+    margin-top: 0;
+    margin-bottom: 30px;
+    line-height: 1.2;
+}
+
+.bottom-text {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-top: 0;
+    margin-bottom: 35px;
+    background-color: rgba(0, 0, 0, 0.55); 
+    backdrop-filter: blur(10px);           
+    -webkit-backdrop-filter: blur(10px);   
+    padding: 24px 32px;                   
+    border-radius: 12px;                  
+    border: 1px solid rgba(255, 255, 255, 0.12); 
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.animated-btn {
+    display: inline-block;
+    padding: 15px 40px; 
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 50px;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    box-shadow: 0 4px 15px rgba(255, 75, 43, 0.3);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.animated-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 8px 25px rgba(255, 75, 43, 0.5);
+    filter: brightness(1.1);
+}
+
+.animated-btn:active {
+    transform: translateY(-1px) scale(0.98);
+    box-shadow: 0 2px 10px rgba(255, 75, 43, 0.4);
+}
+
+/* ==========================================================================
+   4. СТРАНИЦА АРХИВА (ФИКС ВЫЕЗДА ЛЕНТ И ТЕКСТА ЗА РАМКИ КАРТОЧКИ)
+   ========================================================================== */
+
+/* Полупрозрачные карточки-плашки (идентичны странице Авторов) */
+.transparent-card {
+    display: grid;
+    grid-template-columns: 220px minmax(0, 1fr); /* minmax(0, 1fr) — ЖЕСТКИЙ ФИКС: запрещает правой колонке раздуваться и выезжать за рамки */
+    align-items: start;
+    gap: 25px;
+    box-sizing: border-box;
+    background-color: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 20px;
+    margin-bottom: 25px;
+    border-radius: 15px;
+    color: #ffffff;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+    width: 100%; /* Карточка строго держит ширину контейнера */
+}
+
+/* Рамка для портрета ветерана */
+.archive-photo-box {
+    width: 100%;
+    aspect-ratio: 3 / 4;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.transparent-card .archive-photo-box .zoomable-item {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    cursor: zoom-in;
+    transition: transform 0.3s ease;
+}
+
+/* Контейнер текстовых полей */
+.transparent-card .text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 100%; /* Текст не может быть шире колонки */
+    overflow: hidden; /* Защита от вылезания букв */
+}
+
+.transparent-card .text h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #ffffff;
+    margin: 0 0 5px 0;
+    word-wrap: break-word; /* Если ФИО слишком длинное, оно перенесется, а не вылезет наружу */
+}
+
+/* Стилизация звания (Оригинальный фирменный красный цвет) */
+.hero-rank {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: #ff4b2b;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.transparent-card .text p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+    margin: 15px 0 0 0;
+    word-wrap: break-word; /* Фикс выезда длинного описания */
+}
+
+/* --- Внутренние мини-ленты (слайдеры) внутри карточек --- */
+.card-mini-slider {
+    width: 100%;
+    margin-bottom: 12px;
+    box-sizing: border-box;
+}
+
+.card-mini-slider:last-of-type {
+    margin-bottom: 0;
+}
+
+/* Оболочка, изолирующая стрелки от основного грида */
+.slider-inner-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.card-mini-slider .photo-tape-container {
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.25);
+    padding: 8px 40px; /* Зазоры по бокам под абсолютные стрелки */
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    overflow-x: auto;
+    scrollbar-width: none;
+    box-sizing: border-box;
+}
+
+.card-mini-slider .photo-tape-container::-webkit-scrollbar {
+    display: none;
+}
+
+.card-mini-slider .photo-tape {
+    display: flex;
+    gap: 12px;
+    width: max-content; /* Картинки выстраиваются в линию внутри скрытого скролла */
+}
+
+/* Фиксированное центрирование стрелок прокрутки */
+.card-mini-slider .slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    font-size: 11px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    user-select: none;
+    flex-shrink: 0;
+    z-index: 5;
+}
+
+.card-mini-slider .prev-btn { left: 8px; }
+.card-mini-slider .next-btn { right: 8px; }
+
+.card-mini-slider .slider-btn:hover {
+    background: #ff4b2b;
+    border-color: #ff4b2b;
+    transform: translateY(-50%) scale(1.1); 
+    box-shadow: 0 0 10px rgba(255, 75, 43, 0.6);
+}
+
+/* Компактный размер элементов ленты внутри карточки */
+.card-mini-slider .zoomable-item,
+.card-mini-slider .video-preview-box {
+    width: 110px;
+    height: 75px;
+    flex-shrink: 0;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+}
+
+.card-mini-slider .video-preview-box {
+    position: relative;
+    background-color: #111111;
+    overflow: hidden;
+    cursor: zoom-in;
+}
+
+.card-mini-slider .video-preview-box video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+.card-mini-slider .play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+    padding-left: 2px;
+    z-index: 2;
+}
+
+/* --- Механика скрытой биографии по кнопке --- */
+.collapsible-wrapper {
+    grid-column: 1 / -1;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    width: 100%;
+}
+
+.collapsible-content {
+    padding-top: 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 5px;
+}
+
+.collapsible-content p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0;
+    word-wrap: break-word; /* Фикс выезда текста развернутой биографии */
+}
+
+/* Кнопка "Узнать больше" */
+.more-btn {
+    grid-column: 1 / -1;
+    justify-self: start;
+    margin-top: 10px;
+    padding: 10px 24px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border: none;
+    border-radius: 6px;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    box-shadow: 0 4px 12px rgba(255, 75, 43, 0.2);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.more-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(255, 75, 43, 0.4);
+    filter: brightness(1.1);
+}
+
+.more-btn:active {
+    transform: translateY(0);
+}
+
+/* --- Адаптивность для мобильных телефонов --- */
+@media (max-width: 600px) {
+    .transparent-card {
+        grid-template-columns: 1fr; /* На мобилках перестраиваем в одну колонку */
+        gap: 15px;
+        padding: 20px;
+    }
+
+    .archive-photo-box {
+        max-width: 180px;
+        margin: 0 auto;
+    }
+
+    .transparent-card .text {
+        text-align: center;
+    }
+
+    .transparent-card .text h2,
+    .hero-rank {
+        text-align: center;
+    }
+
+    .card-mini-slider .photo-tape {
+        justify-content: center;
+    }
+    
+    .card-mini-slider .slider-btn {
+        display: none; /* Скрываем стрелки на мобильных устройствах, там листается пальцем */
+    }
+
+    .card-mini-slider .photo-tape-container {
+        padding: 8px; /* Убираем боковые отступы на смартфонах */
+    }
+
+    .more-btn {
+        justify-self: center;
+        width: 100%;
+        max-width: 240px;
+    }
+}
+
+
+
+/* ==========================================================================
+   5. СТРАНИЦА АВТОРОВ (AUTHORS)
+   ========================================================================== */
+.authors-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px; 
+}
+
+.author-row-card {
+    background-color: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 15px; 
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 220px 1fr; 
+    gap: 25px;
+    align-items: center; 
+    text-align: left;
+}
+
+.author-photo-box {
+    width: 100%;
+    aspect-ratio: 4 / 3; 
+    overflow: hidden;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.author-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+
+.author-info-box h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0 0 10px 0;
+}
+
+.author-info-box p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.85);
+}
+
+/* ==========================================================================
+   6. СТРАНИЦА "О ПРОЕКТЕ" (КАРУСЕЛЬ И ТЕКСТОВОЙ БЛОК)
+   ========================================================================== */
+.slider-wrapper {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 12px;
+    margin-bottom: 35px;
+}
+
+.photo-tape-container {
+    flex: 1;
+    overflow-x: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    scrollbar-width: none; /* Скрытие скроллбара для Firefox */
+}
+
+.photo-tape-container::-webkit-scrollbar {
+    display: none; /* Скрытие скроллбара для Chrome/Safari */
+}
+
+.photo-tape {
+    display: flex;
+    gap: 20px;
+    width: max-content;
+}
+
+.zoomable-photo {
+    width: 180px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: zoom-in;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), filter 0.3s ease;
+}
+
+.zoomable-photo:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* Стрелки прокрутки ленты */
+.slider-btn {
+    background: rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+    font-size: 18px;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
+    user-select: none;
+flex-shrink: 0;
+}
+.slider-btn:hover {
+background: #ff4b2b;
+border-color: #ff4b2b;
+transform: scale(1.1);
+}
+/* Описание проекта */
+.about-text-block {
+font-size: 18px;
+line-height: 1.6;
+text-align: left;
+color: #ffffff;
+background-color: rgba(0, 0, 0, 0.55);
+backdrop-filter: blur(10px);
+-webkit-backdrop-filter: blur(10px);
+padding: 30px 35px;
+border-radius: 15px;
+border: 1px solid rgba(255, 255, 255, 0.12);
+text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
+}
+.about-text-block p {
+margin-top: 0;
+margin-bottom: 20px;
+}
+.about-text-block p:last-child {
+margin-bottom: 0;
+}
+/* ==========================================================================
+7. ПОЛНОЭКРАННЫЙ ПРОСМОТР ФОТОГРАФИЙ (LIGHTBOX)
+========================================================================== */
+.lightbox {
+display: none;
+position: fixed;
+z-index: 2000;
+left: 0;
+top: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0);
+backdrop-filter: blur(0px);
+-webkit-backdrop-filter: blur(0px);
+justify-content: center;
+align-items: center;
+cursor: zoom-out;
+transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+/* Плавная активация подложки через JS класс */
+.lightbox.active {
+background-color: rgba(0, 0, 0, 0.88);
+backdrop-filter: blur(12px);
+-webkit-backdrop-filter: blur(12px);
+}
+.lightbox-content {
+max-width: 90%;
+max-height: 85%;
+object-fit: contain;
+border-radius: 8px;
+box-shadow: 0 12px 45px rgba(0, 0, 0, 0.8);
+/* Начальная точка анимации (уменьшено и прозрачно) */
+transform: scale(0.75);
+opacity: 0;
+transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), opacity 0.3s ease;
+}
+/* Плавный вылет картинки при добавлении класса active */
+.lightbox.active .lightbox-content {
+transform: scale(1);
+opacity: 1;
+}
+/* Кнопка закрытия модального окна */
+.lightbox-close {
+position: absolute;
+top: 25px;
+right: 35px;
+color: rgba(255, 255, 255, 0.6);
+font-size: 50px;
+font-weight: 300;
+cursor: pointer;
+line-height: 1;
+z-index: 2001;
+transition: color 0.2s ease, transform 0.2s ease;
+}
+.lightbox-close:hover {
+color: #ff4b2b;
+transform: scale(1.1);
+}
+/* ==========================================================================
+8. ПОДВАЛ САЙТА (FOOTER)
+========================================================================== */
+.bottom-line {
+width: 100%;
+border-top: 1px solid rgba(255, 255, 255, 0.15);
+padding: 20px 10px;
+margin-top: 40px;
+text-align: center;
+}
+.bottom-line p {
+font-size: 14px;
+color: rgba(255, 255, 255, 0.6);
+margin: 0;
+letter-spacing: 0.5px;
+}
+/* ==========================================================================
+9. АДАПТИВНОСТЬ И СТИЛИ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ
+========================================================================== */
+@media (max-width: 600px) {
+.main {
+padding: 70px 15px 15px 15px;
+}
+.hamburger-btn {
+top: 15px;
+left: 15px;
+}
+.side-menu {
+width: 240px;
+background-color: rgba(15, 15, 15, 0.85);
+}
+.top-emblems {
+align-self: center;
+margin-left: 0;
+margin-top: 0;
+margin-bottom: 15px;
+}
+.main h1 {
+font-size: 32px;
+margin-bottom: 20px;
+}
+.bottom-text {
+font-size: 15px;
+padding: 16px 20px;
+margin-bottom: 25px;
+}
+.animated-btn {
+padding: 12px 32px;
+font-size: 16px;
+}
+.block {
+display: flex;
+flex-direction: column;
+}
+.block img {
+width: 100%;
+max-width: 350px;
+}
+.authors-title {
+font-size: 28px;
+margin-bottom: 25px;
+}
+.author-row-card {
+grid-template-columns: 1fr;
+text-align: center;
+}
+.author-photo-box {
+max-width: 280px;
+margin: 0 auto;
+}
+.about-text-block {
+padding: 20px;
+font-size: 16px;
+}
+/* Скрываем кнопки прокрутки на телефонах, так как лента отлично листается пальцем (swipe) */
+.slider-btn {
+display: none;
+}
+.slider-wrapper {
+gap: 0;
+}
+.lightbox-close {
+top: 15px;
+right: 20px;
+font-size: 40px;
+}
+}
+/* ==========================================================================
+   10. СТИЛИ ДЛЯ ЛЕНТЫ ВИДЕОРОЛИКОВ И КАСТОМНОГО ПЛЕЕРА
+   ========================================================================== */
+
+/* Подзаголовки для разделения лент фото и видео */
+.section-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.9);
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-left: 3px solid #ff416c;
+    padding-left: 10px;
+}
+
+/* Общий класс для кликабельных элементов ленты (фото и видео контейнеров) */
+.zoomable-item {
+    width: 180px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: zoom-in;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), filter 0.3s ease;
+}
+
+.zoomable-item:hover {
+    transform: scale(1.05);
+    filter: brightness(1.1);
+}
+
+/* Контейнер превьюшки видео в ленте */
+.video-preview-box {
+    position: relative;
+    width: 180px;
+    height: 130px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: zoom-in;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+    background-color: #111111;
+    transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.video-preview-box video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6; /* Слегка затемняем превью, чтобы выделить иконку запуска */
+    transition: opacity 0.3s ease;
+}
+
+/* Кнопка PLAY по центру превью */
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    padding-left: 4px; /* Корректировка треугольника по центру */
+    z-index: 2;
+    box-shadow: 0 4px 10px rgba(255, 65, 108, 0.4);
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.video-preview-box:hover {
+    transform: scale(1.05);
+}
+
+.video-preview-box:hover video {
+    opacity: 0.8;
+}
+
+.video-preview-box:hover .play-icon {
+    transform: translate(-50%, -50%) scale(1.15);
+    background: linear-gradient(45deg, #ff4b2b, #ff416c);
+}
+
+/* Кастомизация встроенного видеоплеера в модальном окне */
+.video-custom-player {
+    background-color: #000000;
+    outline: none;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    max-width: 80% !important; /* Делаем видео чуть компактнее картинок для кинематографичности */
+    aspect-ratio: 16 / 9;
+}
+
+/* Перекрашиваем полосу прокрутки встроенного HTML5 плеера под общую палитру сайта */
+.video-custom-player::-webkit-media-controls-panel {
+    background-image: linear-gradient(to top, rgba(15,15,15,0.95), rgba(30,30,30,0.85)) !important;
+}
+
+.video-custom-player::-webkit-media-controls-play-button,
+.video-custom-player::-webkit-media-controls-current-time-display,
+.video-custom-player::-webkit-media-controls-time-remaining-display,
+.video-custom-player::-webkit-media-controls-timeline,
+.video-custom-player::-webkit-media-controls-volume-slider,
+.video-custom-player::-webkit-media-controls-mute-button {
+    filter: invert(1) sepia(1) saturate(5) hue-rotate(330deg); /* Меняет дефолтный сине-серый цвет элементов на красный (#ff4b2b) */
+}
+

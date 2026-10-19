@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторы проекта</title>
+    
+    <!-- ИКОНКА ДЛЯ ВКЛАДКИ БРАУЗЕРА -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    
+    <!-- Шрифты -->
+    <link rel="preconnect" href="https://googleapis.com">
+    <link rel="preconnect" href="https://gstatic.com" crossorigin>
+    <link href="https://googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- ВЫЕЗЖАЮЩЕЕ МЕНЮ -->
+    <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+    
+    <label for="menu-toggle" class="hamburger-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
+        <nav class="side-menu">
+        <ul class="menu-links">
+            <li><a href="about.html">О проекте</a></li>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="arhiv.html">Архив</a></li>
+            <li><a href="authors.html" class="active">Авторы проекта</a></li>
+            <li><a href="contacts.html">Контактная информация</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- Основной контейнер страницы -->
+    <main class="main">
+        <div class="authors-container">
+            <h2 class="authors-title">Авторы проекта</h2>
+            
+            <!-- Список карточек авторов -->
+            <div class="authors-list">
+                
+                <!-- Автор 1 -->
+                <div class="author-row-card">
+                    <div class="author-photo-box">
+                        <img src="author1.jpg" alt="Фото автора" class="author-photo">
+                    </div>
+                    <div class="author-info-box">
+                        <h3>Иванов Иван Иванович</h3>
+                        <p>Руководитель проекта, сбор и обработка архивных материалов, координация работы команды.</p>
+                    </div>
+                </div>
+
+                <!-- Автор 2 -->
+                <div class="author-row-card">
+                    <div class="author-photo-box">
+                        <img src="author2.jpg" alt="Фото автора" class="author-photo">
+                    </div>
+                    <div class="author-info-box">
+                        <h3>Петров Пётр Петрович</h3>
+                        <p>Главный редактор, проверка исторических хроник Речицкого района, работа с ветеранами.</p>
+                    </div>
+                </div>
+
+                <!-- Автор 3 -->
+                <div class="author-row-card">
+                    <div class="author-photo-box">
+                        <img src="author3.jpg" alt="Фото автора" class="author-photo">
+                    </div>
+                    <div class="author-info-box">
+                        <h3>Сидоров Алексей Сергеевич</h3>
+                        <p>Техническая разработка, веб-дизайн, верстка интерактивных элементов и структуры архива.</p>
+                    </div>
+                </div>
+
+                <!-- Автор 4 -->
+                <div class="author-row-card">
+                    <div class="author-photo-box">
+                        <img src="author4.jpg" alt="Фото автора" class="author-photo">
+                    </div>
+                    <div class="author-info-box">
+                        <h3>Кузнецова Анна Владимировна</h3>
+                        <p>Консультант, куратор поисковой деятельности учащихся, оцифровка фронтовых писем.</p>
+                    </div>
+                </div>
+
+                <!-- Автор 5 -->
+                <div class="author-row-card">
+                    <div class="author-photo-box">
+                        <img src="author5.jpg" alt="Фото автора" class="author-photo">
+                    </div>
+                    <div class="author-info-box">
+                        <h3>Смирнов Дмитрий Николаевич</h3>
+                        <p>Фотограф, обработка медиафайлов, видеоинтервью с участниками интернационального долга.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Тонкая полоска в самом низу страницы -->
+        <footer class="bottom-line">
+            <p>© 2026 Сайт разработан при поддержке клуба "БАГОР" ГУО"Средняя школа №7 г.Речицы"</p>
+        </footer>
+    </main>
+</body>
+</html>

@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Архив памяти — У каждого времени свои герои</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://googleapis.com" rel="stylesheet">
+</head>
+<body>
+
+    <!-- МЕХАНИКА ВЫЕЗЖАЮЩЕГО МЕНЮ -->
+    <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+    <label for="menu-toggle" class="hamburger-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
+
+    <nav class="side-menu">
+        <ul class="menu-links">
+             <li><a href="about.html">О проекте</a></li>
+            <li><a href="index.html" >Главная</a></li>
+            <li><a href="arhiv.html"class="active">Архив</a></li>
+            <li><a href="authors.html">Авторы проекта </a></li>
+            <li><a href="contacts.html">Контактная информация</a></li>
+        </ul>
+    </nav>
+
+    <!-- ОСНОВНОЙ КОНТЕНТ СТРАНИЦЫ -->
+    <main class="authors-container">
+        <h1 class="authors-title">Архив</h1>
+
+        <div class="archive-list">
+
+            
+            <!-- КАРТОЧКА ГЕРОЯ 1 -->
+            <article class="block transparent-card">
+                <div class="archive-photo-box">
+                    <img src="photo1.jpg" alt="Иванов И. И." class="zoomable-item" onclick="openLightbox(this.src, 'img')">
+                </div>
+                
+                <div class="text">
+                    <h2>Иванов Иван Иванович</h2>
+                    <span class="hero-rank">Гвардии Сержант / Воин-афганец</span>
+                    
+                    <!-- Лента ФОТО -->
+                    <div class="card-mini-slider">
+                        <div class="slider-inner-container">
+                            <button class="slider-btn prev-btn" onclick="scrollCardSlider(this, -1)">&#10094;</button>
+                            <div class="photo-tape-container">
+                                <div class="photo-tape">
+                                    <img src="archive1.jpg" alt="Материал 1" class="zoomable-item" onclick="openLightbox(this.src, 'img')">
+                                    <img src="archive2.jpg" alt="Материал 2" class="zoomable-item" onclick="openLightbox(this.src, 'img')">
+                                    <img src="archive3.jpg" alt="Материал 3" class="zoomable-item" onclick="openLightbox(this.src, 'img')">
+                                    <img src="archive4.jpg" alt="Материал 4" class="zoomable-item" onclick="openLightbox(this.src, 'img')">
+                                    <img src="archive5.jpg" alt="Материал 5" class="zoomable-item" onclick="openLightbox(this.src, 'img')">
+                                    <img src="archive6.jpg" alt="Материал 6" class="zoomable-item" onclick="openLightbox(this.src, 'img')">
+                                    <img src="archive7.jpg" alt="Материал 7" class="zoomable-item" onclick="openLightbox(this.src, 'img')">
+                                    <img src="archive8.jpg" alt="Материал 8" class="zoomable-item" onclick="openLightbox(this.src, 'img')">
+                                    <img src="archive9.jpg" alt="Материал 9" class="zoomable-item" onclick="openLightbox(this.src, 'img')">
+                                    <img src="archive10.jpg" alt="Материал 10" class="zoomable-item" onclick="openLightbox(this.src, 'img')">
+                                </div>
+                            </div>
+                            <button class="slider-btn next-btn" onclick="scrollCardSlider(this, 1)">&#10095;</button>
+                        </div>
+                    </div>
+
+                    <!-- Лента ВИДЕО -->
+                    <div class="card-mini-slider">
+                        <div class="slider-inner-container">
+                            <button class="slider-btn prev-btn" onclick="scrollCardSlider(this, -1)">&#10094;</button>
+                            <div class="photo-tape-container">
+                                <div class="photo-tape">
+                                    <div class="video-preview-box" onclick="openLightbox('video1.mp4', 'video')">
+                                        <span class="play-icon">&#9658;</span>
+                                        <video src="video1.mp4" muted preload="metadata"></video>
+                                    </div>
+                                    <div class="video-preview-box" onclick="openLightbox('video2.mp4', 'video')">
+                                        <span class="play-icon">&#9658;</span>
+                                        <video src="video2.mp4" muted preload="metadata"></video>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="slider-btn next-btn" onclick="scrollCardSlider(this, 1)">&#10095;</button>
+                        </div>
+                    </div>
+
+                    <p>Принял участие в боевых действиях в Демократической Республике Афганистан. Награжден орденом Красной Звезды и медалью «За отвагу».</p>
+                </div>
+                
+                <div class="collapsible-wrapper">
+                    <div class="collapsible-content">
+                        <p>Иван Иванович был призван в ряды Вооруженных Сил в 1985 году. Проходил службу в составе 345-го отдельного гвардейского парашютно-десантного полка. Принимал участие в многочисленных боевых операциях по сопровождению колонн в провинции Баграм.</p>
+                    </div>
+                </div>
+
+                <button class="more-btn" onclick="toggleBio(this)">Узнать больше</button>
+            </article>
+
+            <!-- КАРТОЧКА ГЕРОЯ 2 -->
+            <article class="block transparent-card">
+                <div class="archive-photo-box">
+                    <img src="photo2.jpg" alt="Петров П. П." class="zoomable-item" onclick="openLightbox(this.src, 'img')">
+                </div>
+                
+                <div class="text">
+                    <h2>Петров Петр Петрович</h2>
+                    <span class="hero-rank">Рядовой / Связист</span>
+                    
+                    <!-- Лента ФОТО -->
+                    <div class="card-mini-slider">
+                        <div class="slider-inner-container">
+                            <button class="slider-btn prev-btn" onclick="scrollCardSlider(this, -1)">&#10094;</button>
+                            <div class="photo-tape-container">
+                                <div class="photo-tape">
+                                    <img src="archive11.jpg" alt="Материал 1" class="zoomable-item" onclick="openLightbox(this.src, 'img')">
+                                    <img src="archive12.jpg" alt="Материал 2" class="zoomable-item" onclick="openLightbox(this.src, 'img')">
+                                </div>
+                            </div>
+                            <button class="slider-btn next-btn" onclick="scrollCardSlider(this, 1)">&#10095;</button>
+                        </div>
+                    </div>
+
+                    <!-- Лента ВИДЕО -->
+                    <div class="card-mini-slider">
+                        <div class="slider-inner-container">
+                            <button class="slider-btn prev-btn" onclick="scrollCardSlider(this, -1)">&#10094;</button>
+                            <div class="photo-tape-container">
+                                <div class="photo-tape">
+                                    <div class="video-preview-box" onclick="openLightbox('video3.mp4', 'video')">
+                                        <span class="play-icon">&#9658;</span>
+                                        <video src="video3.mp4" muted preload="metadata"></video>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="slider-btn next-btn" onclick="scrollCardSlider(this, 1)">&#10095;</button>
+                        </div>
+                    </div>
+
+                    <p>Уроженец Речицкого района. Выполнял интернациональный долг в период с 1982 по 1984 год. Награжден медалью «За боевые заслуги».</p>
+                </div>
+                
+                <div class="collapsible-wrapper">
+                    <div class="collapsible-content">
+                        <p>Обеспечивал бесперебойную связь в условиях высокогорной местности под Кабулом. Неоднократно восстанавливал поврежденные линии связи под огнем противника. После демобилизации вернулся в родную Речицу.</p>
+                    </div>
+                </div>
+
+                <button class="more-btn" onclick="toggleBio(this)">Узнать больше</button>
+            </article>
+
+            <!-- КАРТОЧКА ГЕРОЯ 3 -->
+            <article class="block transparent-card">
+                <div class="archive-photo-box">
+                    <img src="photo3.jpg" alt="Сидоров С. С." class="zoomable-item" onclick="openLightbox(this.src, 'img')">
+                </div>
+                
+                <div class="text">
+                    <h2>Сидоров Сидор Сидорович</h2>
+                    <span class="hero-rank">Старший прапорщик</span>
+                    
+                    <!-- Лента ФОТО -->
+                    <div class="card-mini-slider">
+                        <div class="slider-inner-container">
+                            <button class="slider-btn prev-btn" onclick="scrollCardSlider(this, -1)">&#10094;</button>
+                            <div class="photo-tape-container">
+                                <div class="photo-tape">
+                                    <img src="archive2.jpg" alt="Материал 1" class="zoomable-item" onclick="openLightbox(this.src, 'img')">
+                                </div>
+                            </div>
+                            <button class="slider-btn next-btn" onclick="scrollCardSlider(this, 1)">&#10095;</button>
+                        </div>
+                    </div>
+
+                    <!-- Лента ВИДЕО -->
+                    <div class="card-mini-slider">
+                        <div class="slider-inner-container">
+                            <button class="slider-btn prev-btn" onclick="scrollCardSlider(this, -1)">&#10094;</button>
+                            <div class="photo-tape-container">
+                                <div class="photo-tape">
+                                    <div class="video-preview-box" onclick="openLightbox('video2.mp4', 'video')">
+                                        <span class="play-icon">&#9658;</span>
+                                        <video src="video2.mp4" muted preload="metadata"></video>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="slider-btn next-btn" onclick="scrollCardSlider(this, 1)">&#10095;</button>
+                        </div>
+                    </div>
+
+                    <p>Принимал участие в урегулировании локальных конфликтов. Служил в технических подразделениях обеспечения авиационной техники.</p>
+                </div>
+                
+                <div class="collapsible-wrapper">
+                    <div class="collapsible-content">
+                        <p>Отвечал за подготовку и боевую готовность вертолетной эскадрильи. В сложных климатических условиях обеспечивал бесперебойный вылет экипажей на боевые задания.</p>
+                    </div>
+                </div>
+
+                <button class="more-btn" onclick="toggleBio(this)">Узнать больше</button>
+            </article>
+
+            <!-- КАРТОЧКА ГЕРОЯ 4 -->
+            <article class="block transparent-card">
+                <div class="archive-photo-box">
+                    <img src="photo4.jpg" alt="Кузнецов А. Н." class="zoomable-item" onclick="openLightbox(this.src, 'img')">
+                </div>
+                
+                <div class="text">
+                    <h2>Кузнецов Алексей Николаевич</h2>
+                    <span class="hero-rank">Сержант / Сапер</span>
+                    
+                    <div class="card-mini-slider">
+                        <div class="slider-inner-container">
+                            <button class="slider-btn prev-btn" onclick="scrollCardSlider(this, -1)">&#10094;</button>
+                            <div class="photo-tape-container">
+                                <div class="photo-tape">
+                                    <img src="archive1.jpg" alt="Материал 1" class="zoomable-item" onclick="openLightbox(this.src, 'img')">
+                                </div>
+                            </div>
+                            <button class="slider-btn next-btn" onclick="scrollCardSlider(this, 1)">&#10095;</button>
+                        </div>
+                    </div>
+
+                    <div class="card-mini-slider">
+                        <div class="slider-inner-container">
+                            <button class="slider-btn prev-btn" onclick="scrollCardSlider(this, -1)">&#10094;</button>
+                            <div class="photo-tape-container">
+                                <div class="photo-tape">
+                                    <div class="video-preview-box" onclick="openLightbox('video4.mp4', 'video')">
+                                        <span class="play-icon">&#9658;</span>
+                                        <video src="video4.mp4" muted preload="metadata"></video>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="slider-btn next-btn" onclick="scrollCardSlider(this, 1)">&#10095;</button>
+                        </div>
+                    </div>
+
+                    <p>Выполнял задачи по разминированию дорог и объектов инфраструктуры. Награжден медалью «За отвагу».</p>
+                </div>
+                
+                <div class="collapsible-wrapper">
+                    <div class="collapsible-content">
+                        <p>Принимал личное участие в десятках разведывательно-поисковых выходов. Обнаружил и обезвредил множество взрывных устройств на маршрутах движения колонн.</p>
+                    </div>
+                </div>
+
+                <button class="more-btn" onclick="toggleBio(this)">Узнать больше</button>
+            </article>
+
+            <!-- КАРТОЧКА ГЕРОЯ 5 -->
+            <article class="block transparent-card">
+                <div class="archive-photo-box">
+                    <img src="photo5.jpg" alt="Смирнов М. С." class="zoomable-item" onclick="openLightbox(this.src, 'img')">
+                </div>
+                
+                <div class="text">
+                    <h2>Смирнов Михаил Сергеевич</h2>
+                    <span class="hero-rank">Младший сержант / Водитель БТР</span>
+                    
+                    <div class="card-mini-slider">
+                        <div class="slider-inner-container">
+                            <button class="slider-btn prev-btn" onclick="scrollCardSlider(this, -1)">&#10094;</button>
+                            <div class="photo-tape-container">
+                                <div class="photo-tape">
+                                    <img src="archive3.jpg" alt="Материал 1" class="zoomable-item" onclick="openLightbox(this.src, 'img')">
+                                </div>
+                            </div>
+                            <button class="slider-btn next-btn" onclick="scrollCardSlider(this, 1)">&#10095;</button>
+                        </div>
+                    </div>
+
+                    <div class="card-mini-slider">
+                        <div class="slider-inner-container">
+                            <button class="slider-btn prev-btn" onclick="scrollCardSlider(this, -1)">&#10094;</button>
+                            <div class="photo-tape-container">
+                                <div class="photo-tape">
+                                    <div class="video-preview-box" onclick="openLightbox('video1.mp4', 'video')">
+                                        <span class="play-icon">&#9658;</span>
+                                        <video src="video1.mp4" muted preload="metadata"></video>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="slider-btn next-btn" onclick="scrollCardSlider(this, 1)">&#10095;</button>
+                        </div>
+                    </div>
+
+                    <p>Водитель мотострелковой роты. Прошел через тяжелые горные переходы, обеспечивая доставку боеприпасов.</p>
+                </div>
+                
+                <div class="collapsible-wrapper">
+                    <div class="collapsible-content">
+                        <p>Неоднократно выводил боевую машину из-под обстрелов, спасая раненых десантников. Проявил высочайшее водительское мастерство на опасных серпантинах.</p>
+                    </div>
+                </div>
+
+                <button class="more-btn" onclick="toggleBio(this)">Узнать больше</button>
+            </article>
+
+        </div>
+    </main>
+
+        <!-- ПОДВАЛ -->
+    <footer class="bottom-line">
+        <p>© 2026 Сайт разработан при поддержке клуба "БАГОР" ГУО "Средняя школа №7 г.Речицы"</p>
+    </footer>
+
+    <!-- МОДАЛЬНОЕ ОКНО ДЛЯ ПРОСМОТРА НА ВЕСЬ ЭКРАН -->
+    <div id="photo-lightbox" class="lightbox" onclick="closeLightbox(event)">
+        <span class="lightbox-close" onclick="closeLightbox(event)">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" alt="Полноэкранный просмотр" style="display: none;">
+        <video class="lightbox-content video-custom-player" id="lightbox-video" controls controlsList="nodownload nofullscreen noremoteplayback" style="display: none;"></video>
+    </div>
+
+    <!-- СКРИПТЫ УПРАВЛЕНИЯ КНОПКАМИ И ЛАЙТБОКСОМ -->
+    <script>
+        // Функция плавной прокрутки мини-лент внутри карточек ветеранов
+        function scrollCardSlider(buttonElement, direction) {
+            const container = buttonElement.parentElement.querySelector('.photo-tape-container');
+            const scrollAmount = 140; 
+            if (container) {
+                container.scrollBy({
+                    left: direction * scrollAmount,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // Функция плавного раскрытия биографии по кнопке
+        function toggleBio(button) {
+            const card = button.closest('.transparent-card');
+            const wrapper = card.querySelector('.collapsible-wrapper');
+            const content = card.querySelector('.collapsible-content');
+            
+            if (!card.classList.contains('expanded')) {
+                wrapper.style.height = content.scrollHeight + 'px';
+                card.classList.add('expanded');
+                button.textContent = 'Свернуть';
+            } else {
+                wrapper.style.height = '0px';
+                card.classList.remove('expanded');
+                button.textContent = 'Узнать больше';
+            }
+        }
+
+        // Полноэкранный лайтбокс (фото и видео)
+        function openLightbox(src, type) {
+            const lightbox = document.getElementById('photo-lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxVideo = document.getElementById('lightbox-video');
+            
+            if (!lightbox) return;
+
+            lightboxImg.style.display = 'none';
+            lightboxVideo.style.display = 'none';
+            lightboxVideo.pause();
+
+            if (type === 'img') {
+                lightboxImg.src = src;
+                lightboxImg.style.display = 'block';
+            } else if (type === 'video') {
+                lightboxVideo.src = src;
+                lightboxVideo.style.display = 'block';
+                lightboxVideo.play();
+            }
+
+            lightbox.style.display = 'flex';
+            setTimeout(() => {
+                lightbox.classList.add('active');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Закрытие модального окна
+        function closeLightbox(event) {
+            if (event && event.target.id !== 'photo-lightbox' && !event.target.classList.contains('lightbox-close')) {
+                return;
+            }
+            const lightbox = document.getElementById('photo-lightbox');
+            const lightboxVideo = document.getElementById('lightbox-video');
+            if (lightbox) {
+                lightbox.classList.remove('active');
+                if (lightboxVideo) lightboxVideo.pause();
+                setTimeout(() => {
+                    lightbox.style.display = 'none';
+                }, 300);
+                document.body.style.overflow = '';
+            }
+        }
+
+        // Закрытие по кнопке Esc
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                const lightbox = document.getElementById('photo-lightbox');
+                if(lightbox && lightbox.classList.contains('active')) lightbox.click();
+            }
+        });
+    </script>
+</body>
+</html>

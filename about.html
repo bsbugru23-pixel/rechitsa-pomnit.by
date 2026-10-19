@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О проекте — У каждого времени свои герои</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://googleapis.com" rel="stylesheet">
+</head>
+<body>
+
+    <!-- МЕХАНИКА ВЫЕЗЖАЮЩЕГО МЕНЮ -->
+    <input type="checkbox" id="menu-toggle" class="menu-checkbox">
+    <label for="menu-toggle" class="hamburger-btn">
+        <span></span>
+        <span></span>
+        <span></span>
+    </label>
+
+    <nav class="side-menu">
+        <ul class="menu-links">
+            <li><a href="about.html" class="active">О проекте</a></li>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="arhiv.html">Архив</a></li>
+            <li><a href="authors.html">Авторы проекта </a></li>
+            <li><a href="contacts.html">Контактная информация</a></li>
+        </ul>
+    </nav>
+
+    <!-- ОСНОВНОЙ КОНТЕНТ СТРАНИЦЫ -->
+    <main class="authors-container">
+        <h1 class="authors-title">О проекте</h1>
+
+        <!-- ГОРИЗОНТАЛЬНАЯ ЛЕНТА С ФОТОГРАФИЯМИ -->
+        <h2 class="section-subtitle">Фотоархив проекта</h2>
+        <section class="slider-wrapper">
+            <button class="slider-btn prev-btn" onclick="scrollSlider(this, -1)">&#10094;</button>
+            <div class="photo-tape-container">
+                <div class="photo-tape">
+                    <img src="archive1.jpg" alt="Архивное фото 1" class="zoomable-item" onclick="openLightbox(this.src, 'img')">
+                    <img src="archive2.jpg" alt="Архивное фото 2" class="zoomable-item" onclick="openLightbox(this.src, 'img')">
+                    <img src="archive3.jpg" alt="Архивное фото 3" class="zoomable-item" onclick="openLightbox(this.src, 'img')">
+                    <img src="archive4.jpg" alt="Архивное фото 4" class="zoomable-item" onclick="openLightbox(this.src, 'img')">
+                    <img src="archive5.jpg" alt="Архивное фото 5" class="zoomable-item" onclick="openLightbox(this.src, 'img')">
+                </div>
+            </div>
+            <button class="slider-btn next-btn" onclick="scrollSlider(this, 1)">&#10095;</button>
+        </section>
+
+        <!-- НОВАЯ ГОРИЗОНТАЛЬНАЯ ЛЕНТА С ВИДЕО -->
+        <h2 class="section-subtitle">Видеохроника и интервью</h2>
+        <section class="slider-wrapper">
+            <button class="slider-btn prev-btn" onclick="scrollSlider(this, -1)">&#10094;</button>
+            <div class="photo-tape-container">
+                <div class="photo-tape">
+                    <!-- Вместо картинок используются превью видео-заглушки (клик запускает лайтбокс) -->
+                    <div class="video-preview-box" onclick="openLightbox('video1.mp4', 'video')">
+                        <span class="play-icon">&#9658;</span>
+                        <video src="video1.mp4" muted preload="metadata"></video>
+                    </div>
+                    <div class="video-preview-box" onclick="openLightbox('video2.mp4', 'video')">
+                        <span class="play-icon">&#9658;</span>
+                        <video src="video2.mp4" muted preload="metadata"></video>
+                    </div>
+                    <div class="video-preview-box" onclick="openLightbox('video3.mp4', 'video')">
+                        <span class="play-icon">&#9658;</span>
+                        <video src="video3.mp4" muted preload="metadata"></video>
+                    </div>
+                    <div class="video-preview-box" onclick="openLightbox('video4.mp4', 'video')">
+                        <span class="play-icon">&#9658;</span>
+                        <video src="video4.mp4" muted preload="metadata"></video>
+                    </div>
+                </div>
+            </div>
+            <button class="slider-btn next-btn" onclick="scrollSlider(this, 1)">&#10095;</button>
+        </section>
+
+        <!-- ТЕКСТОВОЕ ОПИСАНИЕ -->
+        <article class="about-text-block">
+            <p>Данный проект представляет собой цифровую интерактивную платформу памяти, созданную силами учащихся и педагогов Речицкого региона. Наша ключевая цель — собрать воедино, оцифровать и сохранить уникальные биографические хроники, живые воспоминания и фотографии земляков, честно выполнивших свой интернациональный долг.</p>
+            <p>Использование современных веб-технологий позволяет сделать исторические знания более доступными и наглядными для молодого поколения, формируя чувство глубокой гордости за героическое прошлое жителей города Речицы и Речицкого района.</p>
+        </article>
+    </main>
+
+    <!-- ПОДВАЛ -->
+    <footer class="bottom-line">
+        <p>© 2026 Сайт разработан при поддержке клуба "БАГОР" ГУО "Средняя школа №7 г.Речицы"</p>
+    </footer>
+
+    <!-- УНИВЕРСАЛЬНОЕ МОДАЛЬНОЕ ОКНО ДЛЯ ПРОСМОТРА (ФОТО И ВИДЕО) -->
+    <div id="photo-lightbox" class="lightbox" onclick="closeLightbox(event)">
+        <span class="lightbox-close" onclick="closeLightbox(event)">&times;</span>
+        
+        <!-- Контейнер для картинок -->
+        <img class="lightbox-content" id="lightbox-img" alt="Полноэкранный просмотр" style="display: none;">
+        
+        <!-- Контейнер под кастомное полноэкранное видео (без гугловского меню скачивания) -->
+        <video class="lightbox-content video-custom-player" id="lightbox-video" controls controlsList="nodownload nofullscreen noremoteplayback" style="display: none;"></video>
+    </div>
+
+    <!-- УНИВЕРСАЛЬНЫЙ СКРИПТ УПРАВЛЕНИЯ -->
+    <script>
+        // Функция плавной прокрутки конкретной ленты (находит нужный контейнер относительно нажатой кнопки)
+        function scrollSlider(buttonElement, direction) {
+            const wrapper = buttonElement.closest('.slider-wrapper');
+            const container = wrapper.querySelector('.photo-tape-container');
+            const scrollAmount = 240; 
+            if (container) {
+                container.scrollBy({
+                    left: direction * scrollAmount,
+                    behavior: 'smooth'
+                });
+            }
+        }
+
+        // Функция открытия медиа (поддерживает типы 'img' и 'video')
+        function openLightbox(src, type) {
+            const lightbox = document.getElementById('photo-lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxVideo = document.getElementById('lightbox-video');
+            
+            if (!lightbox) return;
+
+            // Сбрасываем старые состояния
+            lightboxImg.style.display = 'none';
+            lightboxVideo.style.display = 'none';
+            lightboxVideo.pause();
+
+            if (type === 'img') {
+                lightboxImg.src = src;
+                lightboxImg.style.display = 'block';
+            } else if (type === 'video') {
+                lightboxVideo.src = src;
+                lightboxVideo.style.display = 'block';
+                lightboxVideo.play(); // Автозапуск при разворачивании
+            }
+
+            lightbox.style.display = 'flex'; 
+            setTimeout(() => {
+                lightbox.classList.add('active');
+            }, 10);
+            
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        // Функция закрытия с остановкой плеера
+        function closeLightbox(event) {
+            // Закрываем только если кликнули по фону или крестику (не по самому видео)
+            if (event && event.target.id !== 'photo-lightbox' && !event.target.classList.contains('lightbox-close')) {
+                return;
+            }
+
+            const lightbox = document.getElementById('photo-lightbox');
+            const lightboxVideo = document.getElementById('lightbox-video');
+            
+            if (lightbox) {
+                lightbox.classList.remove('active');
+                if (lightboxVideo) {
+                    lightboxVideo.pause(); // Ставим видео на паузу при сворачивании
+                }
+                setTimeout(() => {
+                    lightbox.style.display = 'none';
+                }, 300);
+                
+                document.body.style.overflow = ''; 
+            }
+        }
+
+        // Закрытие по нажатию на клавишу Esc
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                // Имитируем клик по фону для вызова закрытия
+                const lightbox = document.getElementById('photo-lightbox');
+                if(lightbox && lightbox.classList.contains('active')) {
+                    lightbox.click();
+                }
+            }
+        });
+    </script>
+</body>
+</html>
