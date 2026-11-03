@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Архив памяти — У каждого времени свои герои</title>
+    <script>document.documentElement.classList.add('js');</script>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@400;600;700;800&family=Prata&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="scroll-progress"><span id="scrollBar"></span></div>
+
+    <header class="topbar" id="topbar">
+        <a class="brand" href="index.html" aria-label="На главную">
+            <span class="brand__mark"><img src="emblem2.png" alt=""></span>
+            <span class="brand__text">
+                <strong>Свои герои</strong>
+                <small>г. Речица</small>
+            </span>
+        </a>
+        <nav class="nav" id="nav" aria-label="Основная навигация">
+            <a class="nav__link" href="index.html">Главная</a>
+            <a class="nav__link" href="about.html">О проекте</a>
+            <a class="nav__link is-active" href="arhiv.html">Архив</a>
+            <a class="nav__link" href="authors.html">Авторы</a>
+            <a class="nav__link" href="contacts.html">Контакты</a>
+            <a class="nav__link nav__cta" href="arhiv.html">Смотреть архив</a>
+        </nav>
+        <button class="burger" id="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="shell">
+                <p class="eyebrow" data-reveal>Архив · пять историй</p>
+                <h1 class="page-title" data-reveal style="--d:80ms">Архив памяти</h1>
+                <p class="page-lead" data-reveal style="--d:160ms">
+                    Жители Речицы и Речицкого района, исполнявшие интернациональный долг в Афганистане.
+                    Откройте карточку, чтобы увидеть биографию, фотографии и видеоматериалы.
+                </p>
+            </div>
+        </section>
+
+        <section class="page-body">
+            <div class="shell archive-page">
+                <div class="archive-grid">
+
+                    <article class="tilt-card" data-hero="brel" tabindex="0" role="button" aria-label="Брель Василий Владимирович — открыть материалы">
+                        <div class="tilt-card__media">
+                            <img src="Photo1glavnoeBrel.jpg" alt="Брель Василий Владимирович" loading="lazy">
+                        </div>
+                        <div class="tilt-card__tags">
+                            <span class="tilt-card__tag">3 фото</span>
+                            <span class="tilt-card__tag">видео</span>
+                        </div>
+                        <span class="tilt-card__prompt">Смотреть</span>
+                        <div class="tilt-card__body">
+                            <h2 class="tilt-card__name">Брель<br>Василий Владимирович</h2>
+                            <span class="tilt-card__rank">Наводчик миномёта</span>
+                            <p class="tilt-card__bio">В 1983 году призван в армию и направлен для дальнейшей службы в Афганистан.</p>
+                        </div>
+                    </article>
+
+                    <article class="tilt-card" data-hero="degtyarenko" tabindex="0" role="button" aria-label="Дегтяренко Владимир Петрович — открыть материалы">
+                        <div class="tilt-card__media">
+                            <img src="Photo2glavnoeDegtyarenko.jpg" alt="Дегтяренко Владимир Петрович" loading="lazy">
+                        </div>
+                        <div class="tilt-card__tags">
+                            <span class="tilt-card__tag">2 фото</span>
+                        </div>
+                        <span class="tilt-card__prompt">Смотреть</span>
+                        <div class="tilt-card__body">
+                            <h2 class="tilt-card__name">Дегтяренко<br>Владимир Петрович</h2>
+                            <span class="tilt-card__rank">Солдат-срочник</span>
+                            <p class="tilt-card__bio">Служил в Кундузской провинции, в городе Имам-Сахиб.</p>
+                        </div>
+                    </article>
+
+                    <article class="tilt-card" data-hero="lobanov" tabindex="0" role="button" aria-label="Лобанов Владимир Аркадьевич — открыть материалы">
+                        <div class="tilt-card__media">
+                            <img src="Photo3glavnoeLOBANOB.jpg" alt="Лобанов Владимир Аркадьевич" loading="lazy">
+                        </div>
+                        <div class="tilt-card__tags">
+                            <span class="tilt-card__tag">1 фото</span>
+                        </div>
+                        <span class="tilt-card__prompt">Смотреть</span>
+                        <div class="tilt-card__body">
+                            <h2 class="tilt-card__name">Лобанов<br>Владимир Аркадьевич</h2>
+                            <span class="tilt-card__rank">Лётчик-истребитель, подполковник запаса</span>
+                            <p class="tilt-card__bio">В 1984–1985 годах участвовал в боевых действиях в Афганистане.</p>
+                        </div>
+                    </article>
+
+                    <article class="tilt-card" data-hero="siziy" tabindex="0" role="button" aria-label="Сизый Михаил Григорьевич — открыть материалы">
+                        <div class="tilt-card__media">
+                            <img src="photo4glavnoeSyziy.jpg" alt="Сизый Михаил Григорьевич" loading="lazy">
+                        </div>
+                        <div class="tilt-card__tags">
+                            <span class="tilt-card__tag">1 фото</span>
+                        </div>
+                        <span class="tilt-card__prompt">Смотреть</span>
+                        <div class="tilt-card__body">
+                            <h2 class="tilt-card__name">Сизый<br>Михаил Григорьевич</h2>
+                            <span class="tilt-card__rank">Радист</span>
+                            <p class="tilt-card__bio">В 1986 году направлен в Афганистан в составе ограниченного контингента советских войск.</p>
+                        </div>
+                    </article>
+
+                    <article class="tilt-card" data-hero="atrochenko" tabindex="0" role="button" aria-label="Атрощенко Сергей Николаевич — открыть материалы">
+                        <div class="tilt-card__media">
+                            <img src="photo5glavnoeAtrochenko.jpg" alt="Атрощенко Сергей Николаевич" loading="lazy">
+                        </div>
+                        <div class="tilt-card__tags">
+                            <span class="tilt-card__tag">1 фото</span>
+                            <span class="tilt-card__tag">видео</span>
+                        </div>
+                        <span class="tilt-card__prompt">Смотреть</span>
+                        <div class="tilt-card__body">
+                            <h2 class="tilt-card__name">Атрощенко<br>Сергей Николаевич</h2>
+                            <span class="tilt-card__rank">Командир штурмовой роты</span>
+                            <p class="tilt-card__bio">Прошёл через тяжёлые горные переходы, обеспечивая доставку боеприпасов.</p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="shell">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <img src="emblem2.png" alt="">
+                    <div>
+                        <strong>У каждого времени свои герои</strong>
+                        <span>г. Речица</span>
+                    </div>
+                </div>
+                <nav class="footer__links" aria-label="Навигация в подвале">
+                    <a href="index.html">Главная</a>
+                    <a href="about.html">О проекте</a>
+                    <a href="authors.html">Авторы</a>
+                    <a href="contacts.html">Контакты</a>
+                </nav>
+            </div>
+            <p class="footer__note">
+                © 2026 Сайт разработан при поддержке клуба «БАГОР» ГУО «Средняя школа №7 г. Речицы»
+            </p>
+        </div>
+    </footer>
+
+    <div class="hero-modal" id="hero-modal" aria-hidden="true">
+        <div class="hero-modal__backdrop" onclick="closeHero()"></div>
+        <div class="hero-modal__panel" role="dialog" aria-modal="true" aria-labelledby="hero-modal-name">
+            <div class="hero-modal__content" id="hero-modal-content"></div>
+        </div>
+    </div>
+
+    <div id="photo-lightbox" class="lightbox" onclick="closeLightbox(event)">
+        <span class="lightbox-close" onclick="closeLightbox(event)">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" alt="Полноэкранный просмотр" style="display: none;">
+        <video class="lightbox-content video-custom-player" id="lightbox-video" controls controlsList="nodownload nofullscreen noremoteplayback" style="display: none;"></video>
+    </div>
+
+    <script>
+        const HEROES = {
+            brel: {
+                name: 'Брель Василий Владимирович',
+                rank: 'Наводчик миномёта',
+                portrait: 'Photo1glavnoeBrel.jpg',
+                photos: ['archive1.jpg', 'archive2.jpg', 'archive3.jpg'],
+                videos: ['video1.mp4'],
+                bio: [
+                    'Родился 19 июня 1963 года в городе Василевичи.',
+                    'В 1980 году окончил среднюю школу в г. Василевичи. После окончания школы поступил в профессионально-техническое училище №35 им. М. Лынькова в г. Гомеле, которое окончил в 1982 году.',
+                    'В 1983 году был призван в армию. После четырёхмесячного карантина отправлен для прохождения дальнейшей службы в Афганистан.'
+                ]
+            },
+            degtyarenko: {
+                name: 'Дегтяренко Владимир Петрович',
+                rank: 'Солдат-срочник',
+                portrait: 'Photo2glavnoeDegtyarenko.jpg',
+                photos: ['archive1.jpg', 'archive2.jpg'],
+                videos: [],
+                bio: [
+                    'Родился 19 января 1969 года в деревне Жмуровка Речицкого района.',
+                    'В 1986 году окончил среднюю школу. В 1987 году был призван в армию. Три месяца служил в учебном центре школы сержантского состава в Туркмении, в городе Мары, был переведён в погранотряд таджикского города Пянджа. Затем отправлен в Афганистан, где служил в Кундузской провинции в городе Имам-Сахиб.'
+                ]
+            },
+            lobanov: {
+                name: 'Лобанов Владимир Аркадьевич',
+                rank: 'Лётчик-истребитель, подполковник запаса',
+                portrait: 'Photo3glavnoeLOBANOB.jpg',
+                photos: ['archive2.jpg'],
+                videos: [],
+                bio: [
+                    'Родился 30 ноября 1953 года в городе Добруше.',
+                    'В 1971 году окончил среднюю школу №3 города Добруша. После окончания школы поступил в Черниговское высшее авиационное училище лётчиков. Закончив училище в 1975 году, получил распределение в Венгрию.',
+                    'С 1984 по 1985 год принимал участие в боевых действиях в Афганистане, за что был награждён орденом «Красной Звезды».'
+                ]
+            },
+            siziy: {
+                name: 'Сизый Михаил Григорьевич',
+                rank: 'Радист',
+                portrait: 'photo4glavnoeSyziy.jpg',
+                photos: ['archive1.jpg'],
+                videos: [],
+                bio: [
+                    'Родился 7 ноября 1959 года в Германии, в городе Галле.',
+                    'Через пять лет семья вернулась в Речицу. Восьмилетку окончил в средней школе №3, а в 1977 году стал выпускником средней школы №2 и сразу же был призван в ряды Советской Армии.',
+                    'Вернувшись из Архангельска, где служил радистом, Михаил работал в горвоенкомате на радиостанции. В 1986 году от Речицкого горвоенкомата был направлен в Республику Афганистан, в состав ограниченного контингента советских войск, также в качестве радиста.'
+                ]
+            },
+            atrochenko: {
+                name: 'Атрощенко Сергей Николаевич',
+                rank: 'Командир штурмовой роты',
+                portrait: 'photo5glavnoeAtrochenko.jpg',
+                photos: ['archive3.jpg'],
+                videos: ['video1.mp4'],
+                bio: [
+                    'Водитель мотострелковой роты. Прошёл через тяжёлые горные переходы, обеспечивая доставку боеприпасов.',
+                    'Неоднократно выводил боевую машину из-под обстрелов, спасая раненых десантников. Проявил высочайшее водительское мастерство на опасных серпантинах.'
+                ]
+            }
+        };
+
+        const HERO_IDS = Object.keys(HEROES);
+
+        const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        document.querySelectorAll('.tilt-card').forEach(card => {
+            if (finePointer && !reduceMotion) {
+                card.addEventListener('pointermove', e => {
+                    const r = card.getBoundingClientRect();
+                    const px = (e.clientX - r.left) / r.width;
+                    const py = (e.clientY - r.top) / r.height;
+                    const rotateX = (0.5 - py) * 16;
+                    const rotateY = (px - 0.5) * 16;
+                    card.style.transform =
+                        'perspective(900px) rotateX(' + rotateX.toFixed(2) + 'deg) rotateY(' +
+                        rotateY.toFixed(2) + 'deg) translateY(-4px)';
+                    card.style.setProperty('--mx', (px * 100).toFixed(1) + '%');
+                    card.style.setProperty('--my', (py * 100).toFixed(1) + '%');
+                });
+
+                card.addEventListener('pointerleave', () => {
+                    card.style.transform = '';
+                });
+            }
+
+            card.addEventListener('click', () => openHero(card.dataset.hero));
+
+            card.addEventListener('keydown', e => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    openHero(card.dataset.hero);
+                }
+            });
+        });
+
+        let lastFocusedCard = null;
+        let previousScrollHandler = null;
+
+        function openHero(id) {
+            const hero = HEROES[id];
+            if (!hero) return;
+
+            lastFocusedCard = document.activeElement;
+            if (!lastFocusedCard || lastFocusedCard === document.body) {
+                lastFocusedCard = document.querySelector('.tilt-card[data-hero="' + id + '"]');
+            }
+
+            const index = HERO_IDS.indexOf(id);
+            const indexLabel = String(index + 1).padStart(2, '0');
+            const totalLabel = String(HERO_IDS.length).padStart(2, '0');
+
+            const bioHtml = hero.bio.map(p => '<div class="story__para"><p>' + p + '</p></div>').join('');
+
+            const photosHtml = hero.photos.length
+                ? '<div class="story__photos story__photos--' + Math.min(hero.photos.length, 3) + '">' +
+                    hero.photos.map((src, i) =>
+                        '<button type="button" class="story__photo" onclick="openLightbox(\'' + src + '\', \'img\')" ' +
+                        'aria-label="Открыть фотографию ' + (i + 1) + '">' +
+                            '<img src="' + src + '" alt="Архивный материал ' + (i + 1) + '" loading="lazy">' +
+                            '<span class="story__photo-zoom">Открыть</span>' +
+                        '</button>').join('') +
+                  '</div>'
+                : '<p class="story__empty">Фотоматериалы пока не добавлены.</p>';
+
+            const videosHtml = hero.videos.length
+                ? '<div class="story__videos">' + hero.videos.map((item, i) => {
+                    const video = typeof item === 'string' ? { src: item, title: '' } : item;
+                    const title = video.title || '';
+                    return '<button type="button" class="story__video" ' +
+                        'onclick="openLightbox(\'' + video.src + '\', \'video\')" ' +
+                        'aria-label="Смотреть видео ' + (i + 1) + (title ? ': ' + title : '') + '">' +
+                        '<span class="story__video-thumb">' +
+                            '<video src="' + video.src + '" muted preload="metadata"></video>' +
+                            '<span class="story__video-index">' + String(i + 1).padStart(2, '0') + '</span>' +
+                            '<span class="story__video-play">&#9658;</span>' +
+                        '</span>' +
+                        '<span class="story__video-meta">' +
+                            '<strong>' + (title || 'Видеозапись ' + (i + 1)) + '</strong>' +
+                            '<small>Смотреть фрагмент</small>' +
+                        '</span>' +
+                    '</button>';
+                }).join('') + '</div>'
+                : '<p class="story__empty">Видеоматериалы пока не добавлены.</p>';
+
+            const photosCount = hero.photos.length
+                ? '<span class="story__chip">Фото · ' + hero.photos.length + '</span>'
+                : '';
+            const videosCount = hero.videos.length
+                ? '<span class="story__chip">Видео · ' + hero.videos.length + '</span>'
+                : '';
+
+            document.getElementById('hero-modal-content').innerHTML =
+                '<div class="story__bar">' +
+                    '<span class="story__bar-mark"><img src="emblem1.png" alt=""></span>' +
+                    '<span class="story__bar-text">' +
+                        '<strong>Архив памяти</strong>' +
+                        '<small>Речица · Афганистан</small>' +
+                    '</span>' +
+                    '<span class="story__bar-index">' + indexLabel + ' <b>/ ' + totalLabel + '</b></span>' +
+                    '<button type="button" class="hero-modal__close" onclick="closeHero()" aria-label="Закрыть">' +
+                        '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" ' +
+                        'stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18"/></svg>' +
+                    '</button>' +
+                    '<span class="story__bar-line"><span id="storyProgress"></span></span>' +
+                '</div>' +
+                '<div class="story__grid">' +
+                    '<aside class="story__aside">' +
+                        '<figure class="story__portrait">' +
+                            '<img src="' + hero.portrait + '" alt="' + hero.name + '">' +
+                            '<span class="story__portrait-tag">Архив · ' + indexLabel + '</span>' +
+                            '<span class="story__portrait-frame"></span>' +
+                        '</figure>' +
+                        '<div class="story__identity">' +
+                            '<span class="story__rank">' + hero.rank + '</span>' +
+                            '<h2 class="story__name" id="hero-modal-name">' + hero.name + '</h2>' +
+                            '<div class="story__meta">' + photosCount + videosCount + '</div>' +
+                        '</div>' +
+                    '</aside>' +
+                    '<div class="story__main">' +
+                        '<span class="story__label">Биография</span>' +
+                        '<div class="story__bio">' + bioHtml + '</div>' +
+                        '<section class="story__block">' +
+                            '<div class="story__block-head">' +
+                                '<span class="story__num">01</span><h3>Фотографии</h3>' +
+                                '<span class="story__count">' + (hero.photos.length ? hero.photos.length + ' шт.' : '—') + '</span>' +
+                            '</div>' + photosHtml +
+                        '</section>' +
+                        '<section class="story__block">' +
+                            '<div class="story__block-head">' +
+                                '<span class="story__num">02</span><h3>Видео</h3>' +
+                                '<span class="story__count">' + (hero.videos.length ? hero.videos.length + ' шт.' : '—') + '</span>' +
+                            '</div>' + videosHtml +
+                        '</section>' +
+                        '<p class="story__footnote">Материалы архива клуба «БАГОР» · средняя школа №7 г. Речицы</p>' +
+                    '</div>' +
+                '</div>';
+
+            const modal = document.getElementById('hero-modal');
+            const panel = modal.querySelector('.hero-modal__panel');
+            const progress = document.getElementById('storyProgress');
+
+            panel.scrollTop = 0;
+            if (progress) progress.style.transform = 'scaleX(0)';
+
+            if (previousScrollHandler) panel.removeEventListener('scroll', previousScrollHandler);
+            previousScrollHandler = function () {
+                if (!progress) return;
+                const range = panel.scrollHeight - panel.clientHeight;
+                const ratio = range > 0 ? Math.min(1, panel.scrollTop / range) : 0;
+                progress.style.transform = 'scaleX(' + ratio + ')';
+            };
+            panel.addEventListener('scroll', previousScrollHandler, { passive: true });
+
+            modal.classList.add('open');
+            modal.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden';
+
+            if (history.replaceState) history.replaceState(null, '', '#' + id);
+
+            modal.querySelector('.hero-modal__close').focus();
+        }
+
+        function closeHero() {
+            const modal = document.getElementById('hero-modal');
+            if (!modal.classList.contains('open')) return;
+
+            modal.classList.remove('open');
+            modal.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = '';
+
+            modal.querySelectorAll('video').forEach(v => v.pause());
+
+            if (lastFocusedCard && lastFocusedCard.focus) lastFocusedCard.focus();
+            lastFocusedCard = null;
+
+            if (history.replaceState) history.replaceState(null, '', location.pathname + location.search);
+        }
+
+        function openLightbox(src, type) {
+            const lightbox = document.getElementById('photo-lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxVideo = document.getElementById('lightbox-video');
+
+            if (!lightbox) return;
+
+            lightboxImg.style.display = 'none';
+            lightboxVideo.style.display = 'none';
+            lightboxVideo.pause();
+
+            if (type === 'img') {
+                lightboxImg.src = src;
+                lightboxImg.style.display = 'block';
+            } else if (type === 'video') {
+                lightboxVideo.src = src;
+                lightboxVideo.style.display = 'block';
+                lightboxVideo.play();
+            }
+
+            lightbox.style.display = 'flex';
+            setTimeout(() => {
+                lightbox.classList.add('active');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox(event) {
+            if (event && event.target.id !== 'photo-lightbox' && !event.target.classList.contains('lightbox-close')) {
+                return;
+            }
+            const lightbox = document.getElementById('photo-lightbox');
+            const lightboxVideo = document.getElementById('lightbox-video');
+            if (lightbox) {
+                lightbox.classList.remove('active');
+                if (lightboxVideo) lightboxVideo.pause();
+                setTimeout(() => {
+                    lightbox.style.display = 'none';
+                }, 300);
+                const heroModal = document.getElementById('hero-modal');
+                document.body.style.overflow = (heroModal && heroModal.classList.contains('open')) ? 'hidden' : '';
+            }
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key !== 'Escape') return;
+
+            const lightbox = document.getElementById('photo-lightbox');
+            if (lightbox && lightbox.classList.contains('active')) {
+                lightbox.click();
+                return;
+            }
+            closeHero();
+        });
+
+        const hashId = location.hash.replace('#', '');
+        if (hashId && HEROES[hashId]) openHero(hashId);
+    </script>
+    <script src="script.js" defer></script>
+</body>
+</html>

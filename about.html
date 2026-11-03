@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>О проекте — У каждого времени свои герои</title>
+    <script>document.documentElement.classList.add('js');</script>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@400;600;700;800&family=Prata&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="scroll-progress"><span id="scrollBar"></span></div>
+
+    <header class="topbar" id="topbar">
+        <a class="brand" href="index.html" aria-label="На главную">
+            <span class="brand__mark"><img src="emblem2.png" alt=""></span>
+            <span class="brand__text">
+                <strong>Свои герои</strong>
+                <small>г. Речица</small>
+            </span>
+        </a>
+        <nav class="nav" id="nav" aria-label="Основная навигация">
+            <a class="nav__link" href="index.html">Главная</a>
+            <a class="nav__link is-active" href="about.html">О проекте</a>
+            <a class="nav__link" href="arhiv.html">Архив</a>
+            <a class="nav__link" href="authors.html">Авторы</a>
+            <a class="nav__link" href="contacts.html">Контакты</a>
+            <a class="nav__link nav__cta" href="arhiv.html">Смотреть архив</a>
+        </nav>
+        <button class="burger" id="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="shell">
+                <p class="eyebrow" data-reveal>Проект · Речица</p>
+                <h1 class="page-title" data-reveal style="--d:80ms">О проекте</h1>
+                <p class="page-lead" data-reveal style="--d:160ms">
+                    Живая история, собранная учащимися и педагогами: фотографии, видеозаписи и рассказы
+                    о земляках, для которых Афганистан стал частью судьбы.
+                </p>
+            </div>
+        </section>
+
+        <section class="page-body">
+            <div class="shell">
+                <div class="rail" data-reveal>
+                    <div class="rail__head">
+                        <h2 class="rail__title">Фотолента</h2>
+                        <span class="rail__count">03 снимка</span>
+                        <div class="rail__nav">
+                            <button class="rail__btn" type="button" onclick="scrollSlider(this, -1)" aria-label="Назад">&#10094;</button>
+                            <button class="rail__btn" type="button" onclick="scrollSlider(this, 1)" aria-label="Вперёд">&#10095;</button>
+                        </div>
+                    </div>
+                    <div class="rail__track">
+                        <figure class="tape-item" onclick="openLightbox('archive1.jpg', 'img')">
+                            <img src="archive1.jpg" alt="Архивный кадр 1">
+                            <figcaption class="tape-item__cap">Архивный кадр 01</figcaption>
+                        </figure>
+                        <figure class="tape-item" onclick="openLightbox('archive2.jpg', 'img')">
+                            <img src="archive2.jpg" alt="Архивный кадр 2">
+                            <figcaption class="tape-item__cap">Архивный кадр 02</figcaption>
+                        </figure>
+                        <figure class="tape-item" onclick="openLightbox('archive3.jpg', 'img')">
+                            <img src="archive3.jpg" alt="Архивный кадр 3">
+                            <figcaption class="tape-item__cap">Архивный кадр 03</figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="rail" data-reveal>
+                    <div class="rail__head">
+                        <h2 class="rail__title">Кинолента</h2>
+                        <span class="rail__count">01 запись</span>
+                        <div class="rail__nav">
+                            <button class="rail__btn" type="button" onclick="scrollSlider(this, -1)" aria-label="Назад">&#10094;</button>
+                            <button class="rail__btn" type="button" onclick="scrollSlider(this, 1)" aria-label="Вперёд">&#10095;</button>
+                        </div>
+                    </div>
+                    <div class="rail__track">
+                        <figure class="tape-item video-card" onclick="openLightbox('video1.mp4', 'video')">
+                            <video src="video1.mp4" muted preload="metadata"></video>
+                            <span class="play-icon">&#9658;</span>
+                            <figcaption class="tape-item__cap">Видеоматериал</figcaption>
+                        </figure>
+                    </div>
+                </div>
+
+                <div class="editorial" data-reveal>
+                    <div class="editorial__side">
+                        <p class="eyebrow">Задача</p>
+                        <p>Сохранить имена, лица и голоса тех, кто прошёл Афганистан.</p>
+                    </div>
+                    <div class="prose">
+                        <p>
+                            Данный проект представляет собой цифровую интерактивную платформу памяти,
+                            созданную силами учащихся и педагогов Речицкого региона. Наша ключевая цель —
+                            собрать воедино, оцифровать и сохранить уникальные биографические хроники,
+                            живые воспоминания и фотографии земляков, честно выполнивших свой
+                            интернациональный долг.
+                        </p>
+                        <p>
+                            Использование современных веб-технологий позволяет сделать исторические знания
+                            более доступными и наглядными для молодого поколения, формируя чувство глубокой
+                            гордости за героическое прошлое жителей города Речицы и Речицкого района.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="shell">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <img src="emblem2.png" alt="">
+                    <div>
+                        <strong>У каждого времени свои герои</strong>
+                        <span>г. Речица</span>
+                    </div>
+                </div>
+                <nav class="footer__links" aria-label="Навигация в подвале">
+                    <a href="index.html">Главная</a>
+                    <a href="arhiv.html">Архив</a>
+                    <a href="authors.html">Авторы</a>
+                    <a href="contacts.html">Контакты</a>
+                </nav>
+            </div>
+            <p class="footer__note">
+                © 2026 Сайт разработан при поддержке клуба «БАГОР» ГУО «Средняя школа №7 г. Речицы»
+            </p>
+        </div>
+    </footer>
+
+    <div id="photo-lightbox" class="lightbox" onclick="closeLightbox(event)">
+        <span class="lightbox-close" onclick="closeLightbox(event)">&times;</span>
+        <img class="lightbox-content" id="lightbox-img" alt="Полноэкранный просмотр" style="display: none;">
+        <video class="lightbox-content video-custom-player" id="lightbox-video" controls controlsList="nodownload nofullscreen noremoteplayback" style="display: none;"></video>
+    </div>
+
+    <script>
+        function openLightbox(src, type) {
+            const lightbox = document.getElementById('photo-lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxVideo = document.getElementById('lightbox-video');
+
+            if (!lightbox) return;
+
+            lightboxImg.style.display = 'none';
+            lightboxVideo.style.display = 'none';
+            lightboxVideo.pause();
+
+            if (type === 'img') {
+                lightboxImg.src = src;
+                lightboxImg.style.display = 'block';
+            } else if (type === 'video') {
+                lightboxVideo.src = src;
+                lightboxVideo.style.display = 'block';
+                lightboxVideo.play();
+            }
+
+            lightbox.style.display = 'flex';
+            setTimeout(() => {
+                lightbox.classList.add('active');
+            }, 10);
+
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox(event) {
+            if (event && event.target.id !== 'photo-lightbox' && !event.target.classList.contains('lightbox-close')) {
+                return;
+            }
+
+            const lightbox = document.getElementById('photo-lightbox');
+            const lightboxVideo = document.getElementById('lightbox-video');
+
+            if (lightbox) {
+                lightbox.classList.remove('active');
+                if (lightboxVideo) {
+                    lightboxVideo.pause();
+                }
+                setTimeout(() => {
+                    lightbox.style.display = 'none';
+                }, 300);
+
+                document.body.style.overflow = '';
+            }
+        }
+
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape') {
+                const lightbox = document.getElementById('photo-lightbox');
+                if (lightbox && lightbox.classList.contains('active')) {
+                    lightbox.click();
+                }
+            }
+        });
+    </script>
+    <script src="script.js" defer></script>
+</body>
+</html>

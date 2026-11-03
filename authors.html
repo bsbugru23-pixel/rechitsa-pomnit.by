@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторы проекта — У каждого времени свои герои</title>
+    <script>document.documentElement.classList.add('js');</script>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Montserrat:wght@400;600;700;800&family=Prata&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="scroll-progress"><span id="scrollBar"></span></div>
+
+    <header class="topbar" id="topbar">
+        <a class="brand" href="index.html" aria-label="На главную">
+            <span class="brand__mark"><img src="emblem2.png" alt=""></span>
+            <span class="brand__text">
+                <strong>Свои герои</strong>
+                <small>г. Речица</small>
+            </span>
+        </a>
+        <nav class="nav" id="nav" aria-label="Основная навигация">
+            <a class="nav__link" href="index.html">Главная</a>
+            <a class="nav__link" href="about.html">О проекте</a>
+            <a class="nav__link" href="arhiv.html">Архив</a>
+            <a class="nav__link is-active" href="authors.html">Авторы</a>
+            <a class="nav__link" href="contacts.html">Контакты</a>
+            <a class="nav__link nav__cta" href="arhiv.html">Смотреть архив</a>
+        </nav>
+        <button class="burger" id="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+            <span></span>
+            <span></span>
+        </button>
+    </header>
+
+    <main>
+        <section class="page-hero">
+            <div class="shell">
+                <p class="eyebrow" data-reveal>Команда проекта</p>
+                <h1 class="page-title" data-reveal style="--d:80ms">Авторы проекта</h1>
+                <p class="page-lead" data-reveal style="--d:160ms">
+                    Педагоги и учащиеся клуба патриотов-спасателей «БАГОР» средней школы №7 г. Речицы,
+                    которые собирали материалы, писали тексты и создавали этот сайт.
+                </p>
+            </div>
+        </section>
+
+        <section class="page-body">
+            <div class="shell">
+                <div class="authors-list">
+
+                    <article class="author-row-card" data-reveal>
+                        <div class="author-photo-box">
+                            <div class="author-photo-placeholder" aria-label="Фото автора">КТ</div>
+                        </div>
+                        <div class="author-info-box">
+                            <h3>Каленистова Татьяна Владимировна</h3>
+                            <span class="hero-rank">Руководитель проекта, руководитель клуба патриотов-спасателей «БАГОР»</span>
+                            <p>Руководитель проекта, сбор и обработка архивных материалов, координация работы команды.</p>
+                        </div>
+                    </article>
+
+                    <article class="author-row-card" data-reveal style="--d:70ms">
+                        <div class="author-photo-box">
+                            <div class="author-photo-placeholder" aria-label="Фото автора">МГ</div>
+                        </div>
+                        <div class="author-info-box">
+                            <h3>Миронович Галина Евгеньевна</h3>
+                            <span class="hero-rank">Руководитель проекта, учитель истории высшей категории</span>
+                            <p>Руководство проектом, работа с историческими источниками и архивными материалами.</p>
+                        </div>
+                    </article>
+
+                    <article class="author-row-card" data-reveal style="--d:140ms">
+                        <div class="author-photo-box">
+                            <div class="author-photo-placeholder" aria-label="Фото автора">СА</div>
+                        </div>
+                        <div class="author-info-box">
+                            <h3 id="author-name-extra" class="author-name-extra">Сергеев Алексей Павлович</h3>
+                            <span class="hero-rank">Разработчик, участник клуба патриотов-спасателей «БАГОР»</span>
+                            <p>Техническая разработка, веб-дизайн, верстка интерактивных элементов и структуры архива.</p>
+                        </div>
+                    </article>
+
+                    <article class="author-row-card" data-reveal style="--d:210ms">
+                        <div class="author-photo-box">
+                            <div class="author-photo-placeholder" aria-label="Фото автора">БА</div>
+                        </div>
+                        <div class="author-info-box">
+                            <h3>Бобырева Ангелина Романовна</h3>
+                            <span class="hero-rank">Разработчик, участник клуба патриотов-спасателей «БАГОР»</span>
+                            <p>Консультант, куратор поисковой деятельности учащихся, оцифровка фронтовых писем.</p>
+                        </div>
+                    </article>
+
+                    <article class="author-row-card" data-reveal style="--d:280ms">
+                        <div class="author-photo-box">
+                            <div class="author-photo-placeholder" aria-label="Фото автора">СА</div>
+                        </div>
+                        <div class="author-info-box">
+                            <h3>Сытько Артём Александрович</h3>
+                            <span class="hero-rank">Ассистент проекта, участник клуба патриотов-спасателей «БАГОР»</span>
+                            <p>Фотограф, обработка медиафайлов, видеоинтервью с участниками интернационального долга.</p>
+                        </div>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="shell">
+            <div class="footer__grid">
+                <div class="footer__brand">
+                    <img src="emblem2.png" alt="">
+                    <div>
+                        <strong>У каждого времени свои герои</strong>
+                        <span>г. Речица</span>
+                    </div>
+                </div>
+                <nav class="footer__links" aria-label="Навигация в подвале">
+                    <a href="index.html">Главная</a>
+                    <a href="about.html">О проекте</a>
+                    <a href="arhiv.html">Архив</a>
+                    <a href="contacts.html">Контакты</a>
+                </nav>
+            </div>
+            <p class="footer__note">
+                © 2026 Сайт разработан при поддержке клуба «БАГОР» ГУО «Средняя школа №7 г. Речицы»
+            </p>
+        </div>
+    </footer>
+
+    <div class="media-viewer" id="media-viewer" aria-hidden="true">
+        <div class="media-viewer__backdrop" onclick="closeMedia()"></div>
+        <div class="media-viewer__card" role="dialog" aria-modal="true" aria-label="Просмотр изображения">
+            <button type="button" class="media-viewer__close" onclick="closeMedia()" aria-label="Закрыть">&times;</button>
+            <span class="media-viewer__badge">секрет найден</span>
+            <div class="media-viewer__media">
+                <img src="authors-extra.jpg" alt="Фотография">
+            </div>
+            <p class="media-viewer__caption">Сергеев, месяц без секса</p>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            const trigger = document.getElementById('author-name-extra');
+            const overlay = document.getElementById('media-viewer');
+            if (!trigger || !overlay) return;
+
+            let clicks = 0;
+            let timer = null;
+
+            function openMedia() {
+                overlay.classList.add('open');
+                overlay.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden';
+                overlay.querySelector('.media-viewer__close').focus();
+            }
+
+            function closeMedia() {
+                if (!overlay.classList.contains('open')) return;
+                overlay.classList.remove('open');
+                overlay.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = '';
+                trigger.focus();
+            }
+            window.closeMedia = closeMedia;
+
+            trigger.addEventListener('click', function () {
+                clicks += 1;
+                clearTimeout(timer);
+
+                if (clicks >= 3) {
+                    clicks = 0;
+                    trigger.classList.remove('is-armed');
+                    openMedia();
+                    return;
+                }
+
+                if (clicks === 2) trigger.classList.add('is-armed');
+
+                timer = setTimeout(function () {
+                    clicks = 0;
+                    trigger.classList.remove('is-armed');
+                }, 900);
+            });
+
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape') closeMedia();
+            });
+        })();
+    </script>
+    <script src="script.js" defer></script>
+</body>
+</html>
